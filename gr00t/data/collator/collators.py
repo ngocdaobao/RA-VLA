@@ -13,5 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .gr00t_n1d7.setup import Gr00tN1d7Pipeline
-from .registry import MODEL_REGISTRY
+from typing import Any, Dict, List
+
+import torch
+
+
+class BasicDataCollator:
+    def __call__(self, features: List[Dict[str, Any]]) -> Dict[str, torch.Tensor]:
+        fields = features[0].keys()
+        batch = {}
+        for key in fields:
+            batch[key] = torch.stack([item[key] for item in features])
+        return batch

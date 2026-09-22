@@ -13,5 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .gr00t_n1d7.setup import Gr00tN1d7Pipeline
-from .registry import MODEL_REGISTRY
+from .gr00t_policy import Gr00tPolicy
+from .policy import BasePolicy, PolicyWrapper
+
+
+__all__ = [
+    "BasePolicy",
+    "Gr00tPolicy",
+    "PolicyWrapper",
+]

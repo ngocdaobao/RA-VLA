@@ -13,5 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .gr00t_n1d7.setup import Gr00tN1d7Pipeline
-from .registry import MODEL_REGISTRY
+"""Shared types for the deployment scripts under ``scripts/deployment``.
+
+``scripts/deployment`` is not an importable package, so anything the
+CLIs share lives here and is reached via the ``gr00t.*`` namespace.
+"""

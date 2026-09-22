@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -13,5 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from .gr00t_n1d7.setup import Gr00tN1d7Pipeline
-from .registry import MODEL_REGISTRY
+set -euo pipefail
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ROBOCASA_SETUP_VARIANT=robocasa365 exec bash "$SCRIPT_DIR/../robocasa/setup_RoboCasa.sh" "$@"
